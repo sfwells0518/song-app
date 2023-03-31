@@ -10,4 +10,16 @@ class SongsController < ApplicationController
     render :show
     # render json: { message: "hello song" }
   end
+
+  def create
+    @song = Song.new(
+      title: params[:title],
+      album: params[:album],
+      artist: params[:artist],
+      year: params[:year],
+    )
+    @song.save
+    render :show
+    # render json: { message: "hello created song" }
+  end
 end
