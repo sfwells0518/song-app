@@ -6,8 +6,8 @@ class SongsController < ApplicationController
   end
 
   def show
-    # @song = Song.find_by(id: params[:id])
-    # render :show
-    render json: { message: "hello song index" }
+    @song = Song.find_by(id: params[:id])
+    render :show
+    # render json: { message: "hello song" }
   end
 end
